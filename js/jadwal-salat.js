@@ -1,72 +1,68 @@
-// ============================================================
-// jadwal-salat.js - Modul 4: mengambil data dari API publik
-// API: https://api.myquran.com (jadwal salat Kemenag RI)
-// ============================================================
-
-// ID kota Banjarmasin pada API MyQuran.
-// Cara mencari ID kota lain: buka https://api.myquran.com/v2/sholat/kota/cari/namakota
 const ID_KOTA = "2113";
-const kotakJadwal = document.querySelector("#jadwal-salat");
-const statusJadwal = kotakJadwal.querySelector(".status");
-const daftarWaktu = kotakJadwal.querySelector(".daftar-waktu");
+const wadahSalat = document.querySelector("#daftar-salat");
+const teksTanggal = document.querySelector("#tanggal-salat");
 
-// 1. Menghasilkan tanggal hari ini dalam format YYYY-MM-DD, contoh: 2026-10-20
-function tanggalHariIni() {
+const DAFTAR_WAKTU = [
+    { kunci: "subuh", nama: "Subuh" },
+    { kunci: "dzuhur", nama: "Dzuhur" },
+    { kunci: "ashar", nama: "Ashar" },
+    { kunci: "maghrib", nama: "Maghrib" },
+    { kunci: "isya", nama: "Isya" }
+];
+
+function tampilkanPesanSalat(pesan) {
+    if (!wadahSalat) return;
+    const p = document.createElement("p");
+    p.className = "pesan-salat";
+    p.textContent = pesan;
+    wadahSalat.replaceChildren(p);
+}
+
+async function muatJadwalSalat() {
+    if (!wadahSalat) return;
+
     const sekarang = new Date();
     const tahun = sekarang.getFullYear();
     const bulan = String(sekarang.getMonth() + 1).padStart(2, "0");
     const tanggal = String(sekarang.getDate()).padStart(2, "0");
-    return `${tahun}-${bulan}-${tanggal}`;
-}
 
-// 2. Menampilkan lima waktu salat ke dalam <ul class="daftar-waktu">
-function tampilkanJadwal(jadwal) {
-    const waktuSalat = [
-        ["Subuh", jadwal.subuh],
-        ["Zuhur", jadwal.dzuhur],
-        ["Asar", jadwal.ashar],
-        ["Magrib", jadwal.maghrib],
-        ["Isya", jadwal.isya],
-    ];
-
-    daftarWaktu.replaceChildren();
-    waktuSalat.forEach(([nama, jam]) => {
-        const item = document.createElement("li");
-        const namaWaktu = document.createElement("span");
-        const jamWaktu = document.createElement("strong");
-
-        namaWaktu.textContent = nama;
-        jamWaktu.textContent = jam;
-
-        item.append(namaWaktu, jamWaktu);
-        daftarWaktu.append(item);
-    });
-    daftarWaktu.hidden = false;
-}
-
-// 3. Mengambil jadwal dari API (asinkron) lengkap dengan penanganan galat // dibantu AI
-async function muatJadwalSalat() {
-    statusJadwal.textContent = "Memuat jadwal salat...";
-    const url = `https://api.myquran.com/v2/sholat/jadwal/${ID_KOTA}/${tanggalHariIni()}`;
+    const url = `https://api.myquran.com/v2/sholat/jadwal/${ID_KOTA}/${tahun}/${bulan}/${tanggal}`;
 
     try {
-        const respons = await fetch(url);
-        if (!respons.ok) {
-            throw new Error(`Server menjawab dengan status ${respons.status}`);
+        const respon = await fetch(url);
+        if (!respon.ok) throw new Error("Gagal mengambil jadwal salat");
+
+        const hasil = await respon.json();
+        if (!hasil.status || !hasil.data || !hasil.data.jadwal) {
+            throw new Error("Format data jadwal salat tidak sesuai");
         }
 
-        const hasil = await respons.json();
-        if (!hasil.status) {
-            throw new Error("Data jadwal tidak tersedia");
+        const jadwal = hasil.data.jadwal;
+        if (teksTanggal) {
+            teksTanggal.textContent = jadwal.tanggal || `${tanggal}/${bulan}/${tahun}`;
         }
 
-        const { lokasi, jadwal } = hasil.data;
-        statusJadwal.textContent = `${jadwal.tanggal} ${lokasi}`;
-        tampilkanJadwal(jadwal);
+        const kartuWaktu = DAFTAR_WAKTU.map((item) => {
+            const kartu = document.createElement("div");
+            kartu.className = "kartu-salat";
+
+            const nama = document.createElement("span");
+            nama.className = "nama-salat";
+            nama.textContent = item.nama;
+
+            const jam = document.createElement("strong");
+            jam.className = "jam-salat";
+            jam.textContent = jadwal[item.kunci] || "-";
+
+            kartu.append(nama, jam);
+            return kartu;
+        });
+
+        wadahSalat.replaceChildren(...kartuWaktu);
     } catch (galat) {
-        console.error("Gagal memuat jadwal salat:", galat);
-        statusJadwal.textContent =
-            "Jadwal salat belum dapat dimuat. Periksa koneksi internet lalu muat ulang halaman.";
+        console.error(galat);
+        if (teksTanggal) teksTanggal.textContent = "";
+        tampilkanPesanSalat("Jadwal salat tidak dapat dimuat saat ini.");
     }
 }
 

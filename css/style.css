@@ -582,23 +582,30 @@ footer p + p {
     padding: 0.55rem 1.25rem;
     border: none;
     border-radius: 6px;
-    background-color: #6b2d5c;
+    background-color: #164e63;
     color: #ffffff;
     font-weight: 600;
     cursor: pointer;
 }
 
-.jadwal-salat {
+section.jadwal-salat {
+    max-width: 100%;
     padding: 2.5rem 1rem;
-    margin-top: 2rem;
-    background-color: #faf6f8;
-    border-top: 1px solid #e5d8e0;
+    margin: 2rem 0 0;
+    background: #f4f8f9;
+    border-top: 1px solid #d5e3e8;
+    border-radius: 0;
+    color: #1e293b;
     text-align: center;
+}
+
+section.jadwal-salat h2 {
+    color: #134e4a;
 }
 
 .tanggal-salat {
     margin: 0.35rem 0 1.25rem;
-    color: #555555;
+    color: #334155;
     font-size: 0.95rem;
 }
 
@@ -612,7 +619,7 @@ footer p + p {
 
 .kartu-salat {
     background-color: #ffffff;
-    border: 1px solid #e5d8e0;
+    border: 1px solid #cbd5e1;
     border-radius: 10px;
     padding: 0.9rem 0.75rem;
     display: flex;
@@ -622,16 +629,16 @@ footer p + p {
 
 .nama-salat {
     font-size: 0.85rem;
-    color: #555555;
+    color: #475569;
 }
 
 .jam-salat {
     font-size: 1.15rem;
-    color: #6b2d5c;
+    color: #134e4a;
 }
 
 .sumber-data {
     margin-top: 1rem;
-    font-size: 0.8rem;
-    color: #666666;
+    font-size: 0.85rem;
+    color: #475569;
 }
