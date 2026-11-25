@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "nama": "Kain Sasirangan Motif Ombak Sinapur Karang",
+    "kategori": "kain",
+    "harga": 180000,
+    "gambar": "img/ombak-sinapur-karang.svg",
+    "deskripsi": "Kain katun satin 2 meter bermotif gelombang karang yang melambangkan keteguhan hati."
+  },
+  {
+    "id": 2,
+    "nama": "Kain Sasirangan Motif Gigi Haruan",
+    "kategori": "kain",
+    "harga": 170000,
+    "gambar": "img/gigi-haruan.svg",
+    "deskripsi": "Motif zig-zag khas Banjar dengan pewarnaan alami yang tajam dan tidak mudah pudar."
+  },
+  {
+    "id": 3,
+    "nama": "Kain Sasirangan Motif Kambang Kacang",
+    "kategori": "kain",
+    "harga": 165000,
+    "gambar": "img/kambang-kacang.svg",
+    "deskripsi": "Motif bunga kacang simbol kerukunan, berbahan katun primisima halus ukuran 2 x 1,15 meter."
+  },
+  {
+    "id": 4,
+    "nama": "Kain Sasirangan Motif Naga Balimbur",
+    "kategori": "kain",
+    "harga": 210000,
+    "gambar": "img/naga-balimbur.svg",
+    "deskripsi": "Kain eksklusif bermotif Naga Balimbur dengan detail jelujur tangan pengrajin Martapura."
+  },
+  {
+    "id": 5,
+    "nama": "Kain Sasirangan Motif Bayam Raja",
+    "kategori": "kain",
+    "harga": 195000,
+    "gambar": "img/bayam-raja.svg",
+    "deskripsi": "Motif klasik bernuansa elegan yang melambangkan martabat dan kehormatan."
+  },
+  {
+    "id": 6,
+    "nama": "Blouse Sasirangan",
+    "kategori": "pakaian",
+    "harga": 150000,
+    "gambar": "img/blouse sasirangan.jpg",
+    "deskripsi": "Blouse sasirangan dengan gaya modern."
+  },
+  {
+    "id": 7,
+    "nama": "Gamis Sasirangan",
+    "kategori": "pakaian",
+    "harga": 150000,
+    "gambar": "img/gamis sasirangan.jpg",
+    "deskripsi": "Gamis Sasirangan dengan motif khas Banjar dan warna yang menarik."
+  },
+  {
+    "id": 8,
+    "nama": "Masker + Pouch Sasirangan",
+    "kategori": "aksesoris",
+    "harga": 215000,
+    "gambar": "img/masker+pouch sasirangan.jpg",
+    "deskripsi": "Masker dan pouch Sasirangan dengan motif khas Banjar yang unik dan menarik, memadukan unsur tradisional dengan desain praktis."
+  },
+  {
+    "id": 9,
+    "nama": "Mukena Sasirangan",
+    "kategori": "aksesoris",
+    "harga": 115000,
+    "gambar": "img/mukena.jpg",
+    "deskripsi": "Mukena dengan motif khas Banjar yang nyaman dikenakan sehari-hari."
+  },
+  {
+    "id": 10,
+    "nama": "Rok Sasirangan",
+    "kategori": "pakaian",
+    "harga": 125000,
+    "gambar": "img/rok sasirangan.jpg",
+    "deskripsi": "Rok sasirangan dengan motif khas Banjar dan warna yang menarik."
+  },
+  {
+    "id": 11,
+    "nama": "Sampul Buku Sasirangan",
+    "kategori": "aksesoris",
+    "harga": 15000,
+    "gambar": "img/sampul buku.jpg",
+    "deskripsi": "Sampul buku Sasirangan dengan motif khas Banjar yang unik dan menarik."
+  },
+  {
+    "id": 12,
+    "nama": "Tas Sasirangan",
+    "kategori": "aksesoris",
+    "harga": 35000,
+    "gambar": "img/tas sasirangan.jpg",
+    "deskripsi": "Tas Sasirangan dengan motif khas Banjar yang unik dan menarik."
+  },
+  {
+    "id": 13,
+    "nama": "Tempat Pensil Sasirangan",
+    "kategori": "aksesoris",
+    "harga": 10000,
+    "gambar": "img/tempat pensil.jpg",
+    "deskripsi": "Tempat pensil kain sasirangan bermotif tradisional khas Banjar."
+  },
+  {
+    "id": 14,
+    "nama": "Gelang Sasirangan",
+    "kategori": "aksesoris",
+    "harga": 25000,
+    "gambar": "img/gelang sasirangan.jpg",
+    "deskripsi": "Gelang aksesoris berbahan kain sasirangan khas Banjarmasin."
+  }
+]

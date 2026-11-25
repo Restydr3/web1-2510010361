@@ -1,4 +1,4 @@
-const NOMOR_WA_TOKO = "+git init6287866211066";
+const NOMOR_WA_TOKO = "+git init+62 823-5463-1369";
 
 const formPesan = document.querySelector("#form-pesan");
 const hasilPesan = document.querySelector("#hasil-pesan");
