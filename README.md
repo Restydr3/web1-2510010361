@@ -1,5 +1,3 @@
-# web1-2510010201
-Proyek Praktikum Pemrograman Web 1 UNISKA
 # Sasirangan Banua
 
 Situs web katalog UMKM kerajinan khas Kalimantan Selatan (fiktif) yang menampilkan koleksi kain, pakaian, dan aksesoris sasirangan bagi masyarakat umum maupun wisatawan. Situs web ini dibuat sebagai proyek **Praktikum Pemrograman Web 1**, Program Studi Teknik Informatika, Universitas Islam Kalimantan Muhammad Arsyad Al Banjari (UNISKA MAB).
